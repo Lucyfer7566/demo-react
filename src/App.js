@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import HeroSection from "./Hero/HeroSection";
+import TrustedCompanies from "./TrustedCompanies/TrustedCompanies";
+import ListPerson from "./ListPerson/ListPerson";
+import Chart from "./Chart/Chart";
+import Map from "./Map/Map";
+import Footer from "./Footer/Footer";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+const theme = createTheme({});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <HeroSection />
+        <TrustedCompanies />
+        <ListPerson />
+        <Chart />
+        <Map />
+        <Footer />
+      </Router>
+    </ThemeProvider>
   );
 }
 
